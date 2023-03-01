@@ -1,0 +1,28 @@
+# Example config file
+global:
+  logLevel: "info"
+  timeout: "15s"
+
+# Static certs. Simply note
+note:
+- alias: "root"
+  expiredDate: "2022-11-07"
+  description: 'example'
+- alias: "server"
+  expiredDate: "2022-10-29"
+  description: 'example'
+- alias: "client"
+  expiredDate: "2022-10-29"
+  description: 'example'
+
+# Certs from remote host
+url:
+- host: "github.com"
+  port: "443"
+  description: "example"
+- host: "google.com"
+  port: "443"
+  description: "example"
+- host: "example.com"
+  port: "443"
+  description: "example"
