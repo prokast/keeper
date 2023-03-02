@@ -32,7 +32,7 @@ url:
   description: "example"
 ```
 # Kubernetes
-draft
+Deploy keeper with [helm-charts](github.com/infrastate/helm-charts/keeper)
 # Docker
 Run with docker on your machine. Mount config/cfg/ directory with [config.yaml](configs/cfg/config.yaml) into container
 ```dockerfile
