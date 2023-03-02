@@ -34,6 +34,7 @@ url:
 # Kubernetes
 draft
 # Docker
+Run with docker on your machine. Mount config/cfg/ directory with [config.yaml](configs/cfg/config.yaml) into container
 ```dockerfile
 FROM infrastate/keeper:1.0.0
 VOLUME [ "./configs/cfg" ]
