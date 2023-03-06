@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/infrastate/treasure/pkg/utils"
+	"github.com/kooberetis/keeper/pkg/utils"
 	"gopkg.in/yaml.v2"
 )
 

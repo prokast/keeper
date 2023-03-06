@@ -4,9 +4,9 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/infrastate/treasure/pkg/apiServer"
-	"github.com/infrastate/treasure/pkg/utils"
-	"github.com/infrastate/treasure/pkg/webserver"
+	"github.com/kooberetis/keeper/pkg/apiServer"
+	"github.com/kooberetis/keeper/pkg/utils"
+	"github.com/kooberetis/keeper/pkg/webserver"
 )
 
 func main() {

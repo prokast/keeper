@@ -5,7 +5,7 @@ import (
 	"path"
 	"text/template"
 
-	"github.com/infrastate/treasure/pkg/url"
+	"github.com/kooberetis/keeper/pkg/url"
 )
 
 func Webserver(w http.ResponseWriter, r *http.Request) {

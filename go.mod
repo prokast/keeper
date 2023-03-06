@@ -1,4 +1,4 @@
-module github.com/infrastate/treasure
+module github.com/kooberetis/keeper
 
 go 1.19
 

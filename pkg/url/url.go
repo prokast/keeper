@@ -3,8 +3,8 @@ package url
 import (
 	"crypto/tls"
 
-	"github.com/infrastate/treasure/pkg/configReader"
-	"github.com/infrastate/treasure/pkg/utils"
+	"github.com/kooberetis/keeper/pkg/configReader"
+	"github.com/kooberetis/keeper/pkg/utils"
 )
 
 // Url configuration structure

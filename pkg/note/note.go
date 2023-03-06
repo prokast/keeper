@@ -2,7 +2,7 @@
 package note
 
 import (
-	"github.com/infrastate/treasure/pkg/configReader"
+	"github.com/kooberetis/keeper/pkg/configReader"
 )
 
 // Active directory configuration structure

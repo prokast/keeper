@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/infrastate/treasure/pkg/note"
-	"github.com/infrastate/treasure/pkg/url"
-	"github.com/infrastate/treasure/pkg/utils"
+	"github.com/kooberetis/keeper/pkg/note"
+	"github.com/kooberetis/keeper/pkg/url"
+	"github.com/kooberetis/keeper/pkg/utils"
 )
 
 // var response = make(map[string]interface{}, 3)
