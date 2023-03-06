@@ -36,7 +36,7 @@ Deploy keeper with [helm-charts](https://github.com/kooberetis/helm-charts/tree/
 # Docker
 Run with docker on your machine. Mount config/cfg/ directory with [config.yaml](configs/cfg/config.yaml) into container
 ```dockerfile
-FROM infrastate/keeper:1.0.0
+FROM kooberetis/keeper:1.0.0
 VOLUME [ "./configs/cfg" ]
 EXPOSE 8080
 CMD ["/bin/sh", "-c", "./keeper"]
