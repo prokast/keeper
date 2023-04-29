@@ -3,3 +3,4 @@ helm/
 .dockerignore
 dockerfile-client
 **/.DS_store
+**/*.pem
