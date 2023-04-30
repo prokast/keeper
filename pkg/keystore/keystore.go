@@ -9,7 +9,7 @@ import (
 )
 
 type CertInfo struct {
-	Subject  interface{}
+	Subject  string
 	NotAfter string
 }
 
@@ -34,7 +34,7 @@ func GetCertInfo() []CertInfo {
 		cert, _ := x509.ParseCertificate(block.Bytes)
 		notAfterFormat := cert.NotAfter.Format("02.01.2006")
 		ci = append(ci, struct {
-			Subject  interface{}
+			Subject  string
 			NotAfter string
 		}{
 			Subject:  cert.Subject.CommonName,
