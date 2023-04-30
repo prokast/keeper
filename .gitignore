@@ -4,3 +4,4 @@ helm/
 dockerfile-client
 **/.DS_store
 **/*.pem
+.vscode
