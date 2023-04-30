@@ -15,7 +15,7 @@ type CertInfo struct {
 
 func getFiles() []string {
 	var filenames []string
-	files, _ := ioutil.ReadDir("./etc/certs")
+	files, _ := ioutil.ReadDir("/etc/keeper/")
 	for _, file := range files {
 		filenames = append(filenames, file.Name())
 	}
@@ -26,7 +26,7 @@ func GetCertInfo() []CertInfo {
 	ci := []CertInfo{}
 	files := getFiles()
 	for _, file := range files {
-		bs, _ := os.ReadFile("/Users/traksel/git/go/src/keeper/etc/certs/" + file)
+		bs, _ := os.ReadFile("/etc/keeper/" + file)
 		block, _ := pem.Decode(bs)
 		if block == nil {
 			log.Fatal("failed to parse PEM block containing the public key")
@@ -38,7 +38,7 @@ func GetCertInfo() []CertInfo {
 			NotAfter string
 		}{
 			Subject:  cert.Subject.CommonName,
-			NotAfter: string(notAfterFormat), //.Format("2006-06-06"),
+			NotAfter: string(notAfterFormat),
 		})
 	}
 	return ci
