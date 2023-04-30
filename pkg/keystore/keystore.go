@@ -3,16 +3,14 @@ package keystore
 import (
 	"crypto/x509"
 	"encoding/pem"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
-	"time"
 )
 
 type CertInfo struct {
 	Subject  interface{}
-	NotAfter time.Time
+	NotAfter string
 }
 
 func getFiles() []string {
@@ -21,11 +19,10 @@ func getFiles() []string {
 	for _, file := range files {
 		filenames = append(filenames, file.Name())
 	}
-	fmt.Println(filenames)
 	return filenames
 }
 
-func GetCertInfo() {
+func GetCertInfo() []CertInfo {
 	ci := []CertInfo{}
 	files := getFiles()
 	for _, file := range files {
@@ -35,17 +32,14 @@ func GetCertInfo() {
 			log.Fatal("failed to parse PEM block containing the public key")
 		}
 		cert, _ := x509.ParseCertificate(block.Bytes)
+		notAfterFormat := cert.NotAfter.Format("02.01.2006")
 		ci = append(ci, struct {
 			Subject  interface{}
-			NotAfter time.Time
+			NotAfter string
 		}{
 			Subject:  cert.Subject.CommonName,
-			NotAfter: cert.NotAfter,
+			NotAfter: string(notAfterFormat), //.Format("2006-06-06"),
 		})
 	}
-	// handle error
-
-	log.Printf("Subject:   %q", ci)
-
-	// Subject:   "CN=*.google.com"
+	return ci
 }
