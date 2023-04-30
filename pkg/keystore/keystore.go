@@ -6,7 +6,10 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"regexp"
 )
+
+var certPath string = os.Getenv("HOME") + "/etc/keeper/"
 
 type CertInfo struct {
 	Subject  string
@@ -15,9 +18,11 @@ type CertInfo struct {
 
 func getFiles() []string {
 	var filenames []string
-	files, _ := ioutil.ReadDir("/etc/keeper/")
+	files, _ := ioutil.ReadDir(certPath)
 	for _, file := range files {
-		filenames = append(filenames, file.Name())
+		if matched, _ := regexp.MatchString(".pem", file.Name()); matched {
+			filenames = append(filenames, file.Name())
+		}
 	}
 	return filenames
 }
@@ -26,7 +31,7 @@ func GetCertInfo() []CertInfo {
 	ci := []CertInfo{}
 	files := getFiles()
 	for _, file := range files {
-		bs, _ := os.ReadFile("/etc/keeper/" + file)
+		bs, _ := os.ReadFile(certPath + file)
 		block, _ := pem.Decode(bs)
 		if block == nil {
 			log.Fatal("failed to parse PEM block containing the public key")
