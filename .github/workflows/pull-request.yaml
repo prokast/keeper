@@ -1,0 +1,20 @@
+on:
+  pull_request:
+    types:
+    - opened
+    - edited
+    - reopened
+    branches:
+    - "main"
+    - "release/**"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: ">=1.19.0"
+    - name: Run tests
+      run: go test ./... -v
