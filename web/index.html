@@ -89,7 +89,6 @@
         <table>
           <thead>
             <tr>
-              <!-- <th>host</th> -->
               <th>common name</th>
               <th>expire</th>
               <th>description</th>
@@ -101,9 +100,6 @@
               {{ $description := .Description }}
               {{ range .CertInfo }}
             <tr>
-              <!-- TODO: -->
-              <!-- Move host info to description -->
-              <!-- <td>{{ $host }}</td> -->
               <td>{{ .CN }}</td>
               <td>{{ .Expired }}</td>
               <td>{{ $host }}</td>
@@ -120,9 +116,5 @@
           </tbody>
         </table>
       </div>
-    <!-- <div class="footer">
-      <p class="footer_text">Infrastate 2023</p>
-      <a class="footer_text" href="https://github.com/traksel">github</a>
-    </div> -->
   </body>
 </html>
