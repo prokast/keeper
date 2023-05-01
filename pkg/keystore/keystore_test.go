@@ -28,7 +28,7 @@ var wrongYaml string = `wrong: yaml`
 
 func TestCertInfo(t *testing.T) {
 	ci := CertInfo{}
-	if reflect.TypeOf(ci.Subject).String() != "string" {
+	if reflect.TypeOf(ci.Subject).String() != "int" {
 		t.Errorf("Incorrect type for field: Subject. Expected field type: %s. Want: string", reflect.TypeOf(ci.Subject).String())
 	}
 	if reflect.TypeOf(ci.NotAfter).String() != "string" {
