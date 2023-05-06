@@ -1,6 +1,6 @@
 Keeper is a tool for monitor certificate expiry date. Ease for configure keeper need dns names or ip's for start tracking certificates expiry date. Deploy keeper into kubernetes or start docker container on your machine.
 # Local storage
-Keeper can show info from her own filesystem. Mount into container volume with your .pem cert files and refresh keeper dashboard. Information about .pem files now showing on dashboard (added in 1.1.0). Mount path: `/etc/keeper/`
+Keeper can show info from her own filesystem. Mount into container volume with your .pem cert files and refresh keeper dashboard. Information about .pem files now showing on dashboard (added in 1.1.0). Mount path: `/keeper/certs/`
 # Configuration
 For start monitor your certs you need add [config.yaml](configs/cfg/config.yaml) file into ./configs/cfg/ directory in keeper container. Config example:
 ```yaml
