@@ -4,6 +4,7 @@ on:
     - opened
     - edited
     - reopened
+    - synchronize
     branches:
     - "main"
     - "release/**"
