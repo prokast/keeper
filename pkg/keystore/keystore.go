@@ -9,7 +9,7 @@ import (
 	"regexp"
 )
 
-var certPath string = "/etc/keeper/"
+var certPath string = "/mnt/keeper/"
 
 type CertInfo struct {
 	Subject  string
