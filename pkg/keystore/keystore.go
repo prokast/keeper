@@ -9,7 +9,7 @@ import (
 	"regexp"
 )
 
-var certPath string = os.Getenv("HOME") + "/etc/keeper/"
+var certPath string = "/etc/keeper/"
 
 type CertInfo struct {
 	Subject  string
